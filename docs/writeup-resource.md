@@ -62,7 +62,7 @@ The second row is the practical finding: both the official and the approximated 
 
 **Licences.** Source repositories are MIT (135 tasks), Apache-2.0 (76), GPL-3.0 (13), BSD-3-Clause (11), LGPL-3.0 (9), LGPL-2.1 (8), BSD-2-Clause (3) and Unlicense (1); 196 tasks are from permissively licensed repositories and 25 from copyleft ones, filterable through `license_class`. Repositories without a licence file are excluded. The compilation, graphs, documentation and tools are Apache-2.0.
 
-**Companions.** `SWE Tasks: offline environments` holds one folder per repository (named by the repository's short name) with the wheels that install its test environment on Python 3.13, so grading needs no network and uses the exact versions used for verification. Two public notebooks accompany the data: a how-to notebook that loads a split, opens a task, builds its environment, grades gold and empty patches, builds supervised-fine-tuning pairs and shows how to extend the set; and a demo notebook that explores the dataset, runs Gemma 4 E2B on a task with graph-guided localization and verifies the resulting patch exactly as the scorer does.
+**Companions.** The companion dataset `SWE Tasks - Wheels` holds one folder per repository (named by the repository's short name) with the wheels that install its test environment on Python 3.13, so grading needs no network and uses the exact versions used for verification. Two public notebooks accompany the data: a how-to notebook that loads a split, opens a task, builds its environment, grades gold and empty patches, builds supervised-fine-tuning pairs and shows how to extend the set; and a demo notebook that explores the dataset, runs Gemma 4 E2B on a task with graph-guided localization and verifies the resulting patch exactly as the scorer does.
 
 ## 4. Experiments and measurements
 
@@ -78,7 +78,7 @@ The second row is the practical finding: both the official and the approximated 
 
 **Why a held-out set of this kind is needed.** Across eight leaderboard submissions of one agent in this competition, scores on the four public repositories over-predicted the private leaderboard about three-fold; a run that resolved 24.8 % of the public tasks on a TPU resolved none of the eleven private-like tasks it reached. Selecting an agent on the public repositories overfits to them. A repository-disjoint, recent, unfamiliar set is the proxy a developer needs, and this dataset is built to be one.
 
-**Baseline.** The demo notebook gives a reproducible floor: on `marko_242`, Gemma 4 E2B with one-hop graph localization and one shot does not resolve the task, while the empty patch fails and the gold patch passes in the same fresh environment, which reproduces the dataset's guarantee outside the pipeline that produced it. A per-model, per-architecture table on the full evaluation split is in progress and will be added here.
+**Baseline.** The demo notebook gives a reproducible floor: on `marko_242`, Gemma 4 E2B with one-hop graph localization and one shot does not resolve the task, while the empty patch fails and the gold patch passes in the same fresh environment, which reproduces the dataset's guarantee outside the pipeline that produced it. A per-model, per-architecture table on the full evaluation split will be added before the deadline; the notebooks let anyone reproduce it.
 
 ## 5. Using the resources
 
