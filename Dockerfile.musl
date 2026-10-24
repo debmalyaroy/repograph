@@ -1,0 +1,13 @@
+# Static Linux binary of repograph (x86_64-unknown-linux-musl).
+#   docker build -f Dockerfile.musl -t repograph-musl .
+#   docker run --rm repograph-musl cat /out/repograph > repograph && chmod +x repograph
+FROM rust:1-alpine AS build
+RUN apk add --no-cache musl-dev gcc g++ make git
+WORKDIR /build
+COPY Cargo.toml Cargo.lock ./
+COPY src ./src
+RUN RUSTFLAGS="-C target-feature=+crt-static -C link-arg=-s" cargo build --release --target x86_64-unknown-linux-musl \
+    && mkdir -p /out && cp target/x86_64-unknown-linux-musl/release/repograph /out/repograph
+
+FROM scratch
+COPY --from=build /out/repograph /out/repograph
