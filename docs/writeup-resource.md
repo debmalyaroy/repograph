@@ -102,21 +102,21 @@ The graph generator still differs from the official one in class-summary text an
 
 ## 8. Related work
 
-SWE-bench and SWE-bench Verified [1, 8] define the issue-to-patch task and the gold-and-tests grading used here. SWE-Gym [5], SWE-smith [6] and SWE-rebench [7] scale task collection with automated environment construction and address contamination with recent tasks; `normalize` converts their records into the competition format. R2E-Gym [19c] studies execution-based verification of candidate patches. SWE-agent [2] and Agentless [3] motivate structured code access for agents, and RepoGraph [10] repository-level code graphs; the generator here reproduces a specific official schema rather than proposing a new one. The anisotropy of learned embeddings and the effect of removing the common mean are known from word representations [14, 15]; the contribution here is the measurement on code-graph embeddings and its practical consequence. tree-sitter [20] provides the parser.
+SWE-bench and SWE-bench Verified [1, 7] define the issue-to-patch task and the gold-and-tests grading used here. SWE-Gym [4], SWE-smith [5] and SWE-rebench [6] scale task collection with automated environment construction and address contamination with recent tasks; `normalize` converts their records into the competition format. R2E-Gym [11] studies execution-based verification of candidate patches. SWE-agent [2] and Agentless [3] motivate structured code access for agents, and RepoGraph [8] repository-level code graphs; the generator here reproduces a specific official schema rather than proposing a new one. The anisotropy of learned embeddings and the effect of removing the common mean are known from word representations [9, 10]; the contribution here is the measurement on code-graph embeddings and its practical consequence. tree-sitter [12] provides the parser.
 
 ## References
 
 1. Jimenez, C. E. et al. (2024). SWE-bench: Can Language Models Resolve Real-World GitHub Issues? ICLR 2024. arXiv:2310.06770.
 2. Yang, J. et al. (2024). SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering. NeurIPS 2024. arXiv:2405.15793.
 3. Xia, C. S. et al. (2024). Agentless: Demystifying LLM-based Software Engineering Agents. arXiv:2407.01489.
-5. Pan, J. et al. (2024). Training Software Engineering Agents and Verifiers with SWE-Gym. arXiv:2412.21139.
-6. Yang, J. et al. (2025). SWE-smith: Scaling Data for Software Engineering Agents. arXiv:2504.21798.
-7. Badertdinov, I. et al. (2025). SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents. arXiv:2505.20411.
-8. Chowdhury, N. et al. (2024). Introducing SWE-bench Verified. OpenAI, August 2024.
-10. Ouyang, S. et al. (2024). RepoGraph: Enhancing AI Software Engineering with Repository-level Code Graph. arXiv:2410.14684.
-14. Ethayarajh, K. (2019). How Contextual are Contextualized Word Representations? EMNLP-IJCNLP 2019. arXiv:1909.00512.
-15. Mu, J., Bhat, S., Viswanath, P. (2018). All-but-the-Top: Simple and Effective Postprocessing for Word Representations. ICLR 2018. arXiv:1702.01417.
-19c. Jain, N. et al. (2025). R2E-Gym: Procedural Environments and Hybrid Verifiers for Scaling Open-Weights SWE Agents. arXiv:2504.07164.
-20. tree-sitter (Brunsfeld et al.), tree-sitter-python.
+4. Pan, J. et al. (2024). Training Software Engineering Agents and Verifiers with SWE-Gym. arXiv:2412.21139.
+5. Yang, J. et al. (2025). SWE-smith: Scaling Data for Software Engineering Agents. arXiv:2504.21798.
+6. Badertdinov, I. et al. (2025). SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents. arXiv:2505.20411.
+7. Chowdhury, N. et al. (2024). Introducing SWE-bench Verified. OpenAI, August 2024.
+8. Ouyang, S. et al. (2024). RepoGraph: Enhancing AI Software Engineering with Repository-level Code Graph. arXiv:2410.14684.
+9. Ethayarajh, K. (2019). How Contextual are Contextualized Word Representations? EMNLP-IJCNLP 2019. arXiv:1909.00512.
+10. Mu, J., Bhat, S., Viswanath, P. (2018). All-but-the-Top: Simple and Effective Postprocessing for Word Representations. ICLR 2018. arXiv:1702.01417.
+11. Jain, N. et al. (2025). R2E-Gym: Procedural Environments and Hybrid Verifiers for Scaling Open-Weights SWE Agents. arXiv:2504.07164.
+12. tree-sitter (Brunsfeld et al.), tree-sitter-python.
 
 **Resources.** Tool and scripts: github.com/debmalyaroy/repograph (Apache-2.0, release v0.1.0 with Linux and Windows binaries). Dataset: kaggle.com/datasets/debmalya84/repograph-verified-swe-tasks ("SWE Tasks"). Environments: kaggle.com/datasets/debmalya84/repograph-verified-swe-tasks-wheels. Notebooks: "Verified SWE tasks: how to use them" and "SWE Tasks Gemma 4 graph guided repair baseline" on Kaggle.
